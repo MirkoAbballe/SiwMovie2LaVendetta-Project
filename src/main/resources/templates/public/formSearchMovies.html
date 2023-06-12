@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Cerca Film</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body>
+	<header th:replace="/source/source.html::intestazione"></header>
+	<div class="wrapper" style="background-image: url('/images/cinemaAdmin.jpg');">
+    	<div class="content form_centrato">
+      
+      		<form class="form-Login form-container text-center" th:action="@{/public/searchMovies}" method='POST' style="width: 28%; height:40%; border:black">
+		   		<h5> Perfavore inserisci l'anno per cui intendi ricercare i Film </h5>
+			
+	        	<div class="form-group">
+					<label for="year">Anno</label>
+					<span><input name="year" type="text" width="40%" class="form-control" placeholder="Inserisci l'anno"></span>		
+				</div>
+		  		<br>
+			
+	        	<div class="form-group">
+					<label for="genre">Seleziona un genere:</label>
+  					<select id="genre" name="genre">
+					  <option value="">/</option>
+	  				  <option value="animazione">animazione</option>
+	    			  <option value="avventura">avventura</option>
+	    			  <option value="azione">azione</option>
+	    			  <option value="biografico">biografico</option>
+	    			  <option value="catastrofico">catastrofico</option>
+	    			  <option value="comico">comico</option>
+	    			  <option value="commedia">commedia</option>
+	    			  <option value="drammatico">drammatico</option>
+	    			  <option value="fantascienza">fantascienza</option>
+	    			  <option value="fantasy">fantasy</option>
+	    			  <option value="giallo">giallo</option>
+	    			  <option value="guerra">guerra</option>
+	    			  <option value="horror">horror</option>
+	    			  <option value="musicale">musicale</option>
+	    			  <option value="politco-sociale">politico-sociale</option>
+	    			  <option value="sportivo">sportivo</option>
+	    			  <option value="storico">storico</option>
+	    			  <option value="western">western</option>
+  					</select>	
+				</div>
+				<button type="submit" class="btn btn-primary btn-block" style="align-items: center ;" >Invio</button>
+      		</form>
+      
+    	</div>
+  	</div>
+  <footer th:replace="/source/source.html::footer"></footer>
+</body>
+
+</html>

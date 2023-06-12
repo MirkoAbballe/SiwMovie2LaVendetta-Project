@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Registrazione Artista</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body>
+    <header th:replace="/source/source.html::intestazione"></header>
+    <div class="wrapper" style="background-image: url('/images/cinemaAdmin.jpg'); overflow-y:auto;">
+        <div class="content form_centrato" style="margin-bottom: 100px;">
+            <form class="form-Login form-container text-center" th:action="@{/admin/artists}" enctype="multipart/form-data" method="POST" th:object="${artist}" 
+            style="margin-top:21%; width: 42%; border:black">
+                <h2 style="color:black;">Inserisci un nuovo Artista</h2>
+                <div th:if="${#fields.hasGlobalErrors()}">
+                    <errors>
+                        <p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+                    </errors>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome:</label> 
+                    <span>
+                        <input required type="text" th:field="${artist.name}" class="form-control" id="name"/>
+                    </span>
+                    <errors>
+                        <span style="color:red;" th:if="${#fields.hasErrors('name')}" th:errors="${artist.name}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <label for="surname">Cognome:</label> 
+                    <span>
+                        <input required type="text" th:field="${artist.surname}" class="form-control" id="surname"/>
+                    </span>
+                    <errors>
+                        <span style="color:red;" th:if="${#fields.hasErrors('surname')}" th:errors="${artist.surname}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nationality">Nazionalità:</label> 
+                    <span>
+                        <input required type="text" th:field="${artist.nationality}" class="form-control" id="nationality" />
+                    </span>
+                    <errors>
+                        <span style="color:red;" th:if="${#fields.hasErrors('nationality')}" th:errors="${artist.nationality}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateOfBirth">Data di nascita:</label> 
+                    <span>
+                        <input required type="date" th:field="${artist.dateOfBirth}" class="form-control" id="dateOfBirth" />
+                    </span>
+                    <errors>
+                        <span style="color:red;" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="${artist.dateOfBirth}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dateOfDeath">Data di morte:</label>
+                    <span>
+                        <input name="dateOfDeath" type="date" class="form-control" th:field="${artist.dateOfDeath}">
+                    </span>
+                    <errors>
+                        <span style="color:red;" th:if="${#fields.hasErrors('dateOfDeath')}" th:errors="${artist.dateOfDeath}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Immagine</label>
+                    <input required type="file" id="image" name="image" class="form-control" th:field="${artist.image}"/>
+                    <errors>
+                        <span th:if="${#fields.hasErrors('image')}" th:errors="${artist.image}"></span>
+                    </errors>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="login-submit btn btn-primary">Invio</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    	<footer th:replace="/source/source.html::footer" style="position: fixed; bottom: 0; width: 100%;"></footer>
+</body>
+
+
+</html>

@@ -1,0 +1,28 @@
+@import url('stile.css');
+
+.review
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stars 
+{
+    margin-right: 10px;
+    color: #f1c40f;
+    font-size: 20px;
+}
+
+.box 
+{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.text 
+{
+    font-size: 16px;
+}

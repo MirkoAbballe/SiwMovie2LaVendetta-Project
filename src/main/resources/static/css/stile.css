@@ -1,0 +1,764 @@
+body 
+{
+	margin: 0;
+	padding: 0;
+	height: 100vh; /* Altezza del viewport */
+	display: flex;
+	flex-direction: column;
+	
+}
+
+header 
+{
+	background-color: #282525;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-containerHeader
+{
+	display: flex;
+	border: 2px black;
+  	flex-direction: row; /* Imposta la direzione orizzontale */
+  	justify-content: space-between; /* Imposta la distribuzione degli elementi */
+  	align-items: center; /* Imposta l'allineamento verticale degli elementi */
+}	
+
+h1 
+{
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+}
+
+/*********************************** CODICE ADIBITO ALLA GESTIONE DELLE RECENSIONI **********************************/
+.reviews-container 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.review 
+{
+  width: 80%;
+  max-width: 700px;
+  margin: 20px;
+  margin-top: 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.review-header 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+.review-title 
+{
+  margin: 0;
+}
+
+.review-rating 
+{
+  font-size: 40px;
+}
+
+.checked 
+{
+  color: orange;
+}
+
+.review-content 
+{
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+.review-text 
+{
+  margin: 0;
+  color:black;
+}
+
+.review-author 
+{
+  margin: 10px 0 0;
+  color:black;
+  text-align: right;
+  font-style: italic;
+  font-size: 14px;
+}
+	
+
+.center-box 
+{
+  margin: auto; /* imposta il margine automatico per centrare la box */
+  width: 40%; /* imposta la larghezza della box al 50% della larghezza della pagina */
+  border: 4px solid black; /* imposta il bordo della box */
+  padding: 10px; /* imposta il padding della box */
+  text-align: left; /* imposta l'allineamento del testo al centro */
+  position:absolute;
+  background-color: whitesmoke;
+  top:50%;
+  left:50%;
+}
+
+
+.flex-containerLista
+{
+	
+  display: flex;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  flex-direction: column;
+  overflow-y: scroll;
+  border: 4px solid;
+  height: 55%;
+  width: 40%;
+}
+
+.flex-containerLista1
+{
+	
+  display: flex;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  flex-direction: column;
+  overflow-y: scroll;
+  border: 4px solid;
+  height: 55%;
+  width: 40%;
+}
+
+.flex-containerLista2
+{
+  display: flex;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  flex-direction: column;
+  border: 4px solid;
+  width: 30%;
+  position:absolute;
+  bottom:40%;
+  left: 25%;
+}
+
+.immagine-film
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position:absolute;
+  width: 60%;
+  top:45%;
+  bottom: 40%;
+  left:35%;
+}
+
+.flex-containerArtista
+{
+	
+  display: flex;
+  border: 4px solid black;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:45%;
+  left:40%;
+  height:20%;
+  background-color: whitesmoke;
+  flex-direction: column;
+  border: 4px solid;
+}
+
+.flex-containerAggiornaFilm{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background-color: antiquewhite;
+  flex-direction: column;
+  overflow-y: scroll;
+  border: 4px solid;
+  height: 40%;
+}
+
+.flex-item {
+  font-size: 26px;
+  font-family: Times New Roman (serif);
+}
+
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	font-size: 200%;
+	font-family: "Franklin Gothic Medium"; 
+	background-image:url(sfondo_index.jpg);
+	align-items: center;
+	justify-content: center-top; 
+}
+/*----------------- FORM TAG E CLASSI ----------------------------*/
+
+
+.form-update-movie
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  top: 30%
+}
+.form-container 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  max-width: 50%;
+  overflow: auto;
+  margin: 0 auto; /* Centra il contenitore del form orizzontalmente */
+  height: auto; /* Imposta l'altezza del contenitore del form su "auto" per adattarsi al contenuto */
+  top: 30%
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: white;
+  width: fit-content;
+  margin: auto;
+  overflow:auto;
+}
+
+.form_centrato
+{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+.form-group {
+  display: block; /* Imposta ogni elemento del gruppo del form su una riga separata */
+  margin-bottom: 10px; /* Aggiunge un margine inferiore per separare i gruppi del form */
+}
+
+input[type="text"] {
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] 
+{
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover 
+{
+  background-color: #3e8e41;
+}
+
+
+errors
+{
+	
+  font-family: "Franklin Gothic Medium";
+  font-size: 28px;
+  color: white;
+}
+      
+.content 
+{
+	flex: 1;}
+
+ .container {
+    position: relative;
+  }
+
+  .text{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, +0%);
+    color: white;
+    text-align: center;
+  }
+  
+  .text-2{
+	 position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(+100%, -50%);
+    color: white;
+    text-align: center-right;
+  }
+
+  
+  
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color:#282525;
+}
+
+.left-section {
+  display: flex;
+  background-color:#282525;
+  align-items: center;
+  margin-right: 3%;
+}
+
+.home{
+  background-color:#282525;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 3%;
+  cursor: pointer;
+}
+
+.my-reviews{
+  background-color:#282525;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.my-list{
+	
+  background-color:#282525;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: -350%;
+}
+.center-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282525;
+}
+
+/*------------------------------ TAG FOOTER ---------------------------*/
+footer
+{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #363A43;
+  text-align: center;
+}
+
+footer img
+{
+	max-width: 100%;
+    height: auto;
+    width: auto;
+	align-items: center;
+	text-align: center;
+}
+
+
+.star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/images/stella.svg");
+  background-size: cover;
+  margin-right: 5px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+  /* altri stili opzionali */
+}
+
+.button-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.aoao{
+	position:fixed;
+	top:60%;
+	right:0%;
+	color:black;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 30px;
+  line-height: 1;
+  color: #333;
+  opacity: 0.5;
+}
+
+
+.container {
+  background-color: #282525;
+  
+  width:100% 
+}
+
+.containerFooter
+ {
+  background-color: #363A43;
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.review-content .trash-review{
+	
+	position:absolute;
+	right:40%;
+	
+}
+
+
+.stelle
+{
+	position: fixed;
+	top: 3.6%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+  	height: auto;
+}
+
+.nomeSiw
+{
+	position: fixed;
+	top: 3.6%;
+	right: 7%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+  	height: auto;
+}
+.registrazione
+{
+	position: fixed;
+	top: 4%;
+	left:87%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+  	height: auto;
+}
+
+.log
+{
+	position: fixed;
+	top: 4%;
+	left:95%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+  	height: auto;
+}
+
+p
+{
+	color: white;
+	font-style: initial;
+	align-items: right;
+	border: 0;
+	margin: 0;
+}
+
+h2
+{
+	color: white;
+}
+
+h3
+{
+	color: white;
+}
+
+.adminFeatures
+{
+	background-color: whitesmoke;
+    position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	align-items: center;
+}
+/*----------------------CLASSI PER LA VISUALIZZAZIONE DELLE ENTITA' CENTRATE VERTICALI (FILM E ARTISTI)----------------------*/
+.wrapper 
+{
+	min-height: 130vh;
+	display: flex;
+  	flex-direction: column;
+  	height: auto;
+  	flex-grow: 1;
+  	overflow: auto;
+}
+
+.container-entity
+{
+ top: 60%;
+ max-width: 800px;
+ margin: 0 auto;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ overflow: auto;
+ height: auto; /* Imposta l'altezza del contenitore del form su "auto" per adattarsi al contenuto */
+}
+
+.entity 
+{
+  margin: 20px;
+ padding: 20px;
+ background-color: #fff;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+ text-align: center;
+ width: auto;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ flex-basis: calc(33.33% - 40px);
+}
+
+.entity img 
+{
+ width: 80px;
+ height: 80px;
+ object-fit: cover;
+ border-radius: 50%;
+ margin-bottom: 20px;
+}
+
+.entity a img 
+{
+align-items: bottom right;
+ width: 30px;
+ height: 30px;
+ object-fit: cover;
+ border-radius: 50%;
+ margin-bottom: 20px;
+}
+
+.entity h2 
+{
+	margin: 0;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+}
+
+.entity p 
+{
+	margin: 0;
+	font-size: 18px;
+	color: #666;
+}
+
+/*---------------------- CLASSI PER LA VISUALIZZAZIONE DELLE ENTITA' ORIZZONTALI (FILM E ARTISTI) ----------------------*/
+.container-entity-orrizzontale
+{
+ margin: 0 auto;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ overflow-y: auto;
+ height: auto; /* Imposta l'altezza del contenitore del form su "auto" per adattarsi al contenuto */
+}
+
+.entity-orizzontale
+{
+flex: 0 0 auto;
+ margin: 20px;
+ padding: 20px;
+ background-color: #fff;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+ text-align: center;
+ width: 30%;
+ display: flex;
+ flex-direction: row;
+}
+
+.contenitoreFilm
+{
+	display:block;
+	position:absolute;
+	top:10%;
+	right:38%;
+	width:auto;
+}
+
+.contenitoreFilm2
+{
+	display:fixed;
+	position:absolute;
+	top:10%;
+	width:66%;
+}
+
+.imgfilm
+{	
+	top:8%;
+	width: 50%;
+}
+
+.entity-orizzontale img 
+{
+ width: 100px;
+ height: 100px;
+ object-fit: cover;
+ border-radius: 50%;
+ margin-bottom: 20px;
+}
+
+.entity-orizzontale a img 
+{
+ align-items: bottom right;
+ width: 30px;
+ height: 30px;
+ object-fit: cover;
+ border-radius: 50%;
+ margin-bottom: 20px;
+}
+
+
+.btn-toolset-form
+{
+ display: inline-block;
+ text-align: center;
+ white-space: nowrap;
+ color: #FFFFFF;
+ text-decoration: none;
+ line-height: 1.2;
+ font-weight: normal;
+ font-family: sans-serif;
+ font-size: 18px;
+ background-color: #007BFF;
+ border-radius: 19px;
+ padding: 10px 6px;
+ border: 4px solid #006FE6;
+ cursor: pointer;
+}
+.btn-toolset:hover:form
+{
+ background-color: #0063CC;
+ border-color: #0056B3;
+}
+.btn-toolset > strong:form 
+{
+ font-size: 14px;
+}
+
+
+/******************* PULSANTI PER LA GESTIONE indexAdmin ******************************/
+.button-toolset 
+{
+ display: inline-block;
+ position: absolute;
+ text-align: center;
+ white-space: nowrap;
+ color: #FFFFFF;
+ text-decoration: none;
+ line-height: 1.2;
+ font-weight: normal;
+ font-family: sans-serif;
+ font-size: 35px;
+ background-color: #FF0000;
+ border-radius: 22px;
+ padding: 10px 15px;
+ border: 8px solid #E6CD0C;
+ cursor: pointer;
+}
+.button-toolset:hover 
+{
+ background-color: #CC0000;
+ border-color: #B3AA00;
+}
+.button-toolset > strong 
+{
+ font-size: 24px;
+}
+
+
+.contenitoreFilm3
+{
+	position: fixed;
+	top:40%;
+}
+
+.dropdown-content 
+{
+  display: none;
+  position: absolute;
+  min-width: 180px;
+  background-color:red;
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 18px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content 
+{
+  display: block;
+}

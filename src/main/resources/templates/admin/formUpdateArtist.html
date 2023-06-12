@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Aggiornamento Artista</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+
+<body>
+	<header th:replace="/source/source.html::intestazione"></header>	
+	<div class="wrapper" style="background-image: url('/images/cinemaAdmin.jpg'); overflow-y:auto;">
+   		<div style="margin-top:10%;" class="form-container">
+				<div class="text-center">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+				    <h4>Aggiorna l'artista</h4>
+				   <form method="POST" class="form-Login text-center" enctype="multipart/form-data" th:action="@{/admin/artist/edit/{id}(id=${artist.id})}" th:object="${artist}">
+					 <div th:if="${#fields.hasGlobalErrors()}">
+						<errors>
+        					<p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+						</errors>
+					</div>
+					  <span>
+					    <div class="form-group">
+					    	<label for="name">Nome:</label>
+	    					<input required type="text" id="name" name="name" th:value="${artist.name}" readonly/>
+	    				</div>
+	    				
+	    				 <div class="form-group">
+	   					 	<label for="surname">Cognome:</label>
+	    				 	<input required type="text" id="surname" name="surname" th:value="${artist.surname}" readonly />
+	    					
+	    				 </div>
+	    				 
+	    				<div class="form-group">
+							<label for="nationality">Nazionalità:</label> 
+							<span><input required type="text" th:field="${artist.nationality}" class="form-control" id="nationality" /></span>
+							<errors>
+								<span style="color:red;" th:if="${#fields.hasErrors('nationality')}" th:errors="${artist.nationality}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "name". -->
+							</errors>
+					   </div>
+	    				
+	    				 <div class="form-group">
+	    				 	<label for="dateOfBirth">Data di nascita:</label>
+	   					 	<input required type="date" id="dateOfBirth" name="dateOfBirth" th:value="${artist.dateOfBirth}" />
+	   					 	<errors>
+								<span style="color:red;" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="${artist.dateOfBirth}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "name". -->
+							</errors>
+	    				 </div>
+	    				 
+	    				 <div class="form-group">
+	    				 	<label for="dateOfDeath">Data di morte:</label>
+	   					 	<input type="date" id="dateOfDeath" name="dateOfDeath" th:value="${artist.dateOfDeath}" />
+	   					 	<errors>
+								<span style="color:red;" th:if="${#fields.hasErrors('dateOfDeath')}" th:errors="${artist.dateOfDeath}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "name". -->
+							</errors>
+	    				 </div>
+	  					
+	  					<div class="form-group">
+		    				<label for="image">Immagine:</label>
+		    				<span><input required  name="image" type="file" class="form-control" th:field="${artist.image}"></span>
+
+	  					</div>
+	  				
+	    				<button type="submit">Salva</button>
+	    				</span>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+		<footer th:replace="/source/source.html::footer"></footer>
+</body>
+</html>

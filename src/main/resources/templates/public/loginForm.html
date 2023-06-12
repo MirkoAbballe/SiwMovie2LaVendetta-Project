@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Login</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body>
+	<header th:replace="/source/source.html::intestazione"></header>
+	<div class="wrapper" style="background-image: url('/images/cinemaLogin.jpg');">
+    	<div class="content form_centrato">
+      		<form class="form-Login form-container text-center" th:action="@{/login}" method='POST' style="width: 30%; height:50%; border:black">
+		 		<br>
+        		<h5> Perfavore inserisci i dati per effettuare il Login </h5>
+        		<p th:if="${loginError}" class="error"> Login fallito  </p>
+
+        		<div class="form-group">
+          			<label for="username">Username</label> 
+         			<span><input required type="text" placeholder="Username" class="form-control" name="username" id="username"></span>        
+        		</div>
+        	
+        		<div class="form-group">
+          			<label for="username">Password</label> 
+          			<span><input required type="password" placeholder="Password" class="form-control" name="password" id="password"></span>       
+        		</div>
+        	
+        		<div class="form-group">
+          			<button type="submit" class="login-submit btn btn-primary">Invio</button>
+        		</div>
+        
+      		</form>
+       </div>
+  </div>
+  
+  <footer th:replace="/source/source.html::footer"></footer>
+</body>
+
+</html>

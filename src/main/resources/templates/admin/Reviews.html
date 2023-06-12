@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta charset="UTF-8">
+	<title>Gestione Recensioni</title>
+	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	<link rel="stylesheet" href="/css/stile.css" />
+	
+	<link rel="stylesheet" 
+		th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header th:replace="/source/source.html::intestazione"></header>
+	<div class="wrapper" style="background-image: url('/images/cinemaAdmin.jpg'); overflow-y:auto;">
+		<div class="content">
+			<div class="reviews-container" th:each="review : ${reviews}" style="overflow-y: auto;">
+				<div class="review" style="overflow-y: auto;">
+					<div class="review-header">
+						<h2 class="review-title" th:text="${review.title}">Titolo della recensione</h2> 
+						<div class="review-rating">
+							<div th:if="${review.valutation==1}">
+								<span style="color:yellow;">&#9733;</span>
+							</div>
+							
+							<div th:if="${review.valutation==2}">
+								<span style="color:yellow;">&#9733; &#9733;</span>
+							</div>
+							
+							<div th:if="${review.valutation==3}">
+								<span style="color:yellow;">&#9733; &#9733; &#9733;</span>
+							</div>
+							
+							<div th:if="${review.valutation==4}">
+								<span style="color:yellow;">&#9733; &#9733; &#9733; &#9733;</span>
+							</div>
+							
+							<div th:if="${review.valutation==5}">
+								<span style="color:yellow;">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+							</div>
+						</div>
+					</div>
+					<div class="review-content">
+						<p class="review-text" th:text="'Titolo del Film: '+${review.movie.title}">Titolo del film</p>
+						<p class="review-text" th:text="${review.text}">Testo della recensione</p>
+						<p class="review-author" th:text="${review.date}">Data della recensione</p>
+						<p class="review-author" th:text="${review.writer.username}">Autore della recensione</p>
+						<a class="review-author" th:href="@{'/admin' + '/deleteReview/' +${review.id}}"><img src="/images/trash.png"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="/source/source.html::footer"></footer>
+</body>
+</html>
+

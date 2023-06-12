@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	 	<title th:text="'Nuova recensione per: ' + ${movie.title}"></title>
+	 	
+	 	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	 	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+		<link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+ 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<header th:replace="/source/source.html::intestazione"></header>
+	
+		<div class="wrapper" style="background-image: url('https://source.unsplash.com/random/1920x1000/?Netflix');">
+			<div class="content form_centrato">
+				<form class="form-Login form-container text-center" th:action="@{/default/setReview/{id}(id=${movie.id})}" method="POST" th:object="${review}" style="width: 30%; height:50%; border:black">
+    				<h5 th:text="'Inserisci una recensione per il film: ' + ${movie.title}"></h5>
+    				
+    				<div class="form-group">
+        				<label for="text">Titolo della Recensione:</label>
+        				<span><input required type="text" class="form-control" th:field="${review.title}" id="text"/></span>
+        				<errors>
+           		 			<span style="color:red;" th:if="${#fields.hasErrors('title')}" th:errors="${review.title}"></span>
+        				</errors>
+    				</div>
+    				
+    				<div class="form-group">
+        				<label for="text">Testo della Recensione:</label>
+        				<span><input required type="text" class="form-control" th:field="${review.text}" id="text"/></span>
+        				<errors>
+           		 			<span style="color:red;" th:if="${#fields.hasErrors('text')}" th:errors="${review.text}"></span>
+        				</errors>
+    				</div>
+    
+    				<div class="form-group">
+        				<label for="valutation">Seleziona una Valutazione:</label>
+        				<select id="valutation" name="valutation" th:field="${review.valutation}">
+            				<option value="1">&#9733;</option>
+				            <option value="2">&#9733; &#9733;</option>
+				            <option value="3">&#9733; &#9733; &#9733;</option>
+				            <option value="4">&#9733; &#9733; &#9733; &#9733;</option>
+				            <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
+        				</select>
+    				</div>
+    
+   		 			<div class="form-group">
+          				<button type="submit" class="login-submit btn btn-primary">Invio</button>
+        			</div>
+			  </form>
+		</div>
+	</div>
+	<footer th:replace="/source/source.html::footer"></footer>
+  </body>
+</html>

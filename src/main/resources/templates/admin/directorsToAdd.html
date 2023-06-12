@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Gestione degli Artisti</title>
+    <link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+    <link rel="stylesheet" href="/css/stile.css" />
+
+    <link rel="stylesheet" 
+        th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+        crossorigin="anonymous" />
+</head>
+
+<body>
+	
+	<header th:replace="/source/source.html::intestazione"></header>
+	
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	
+    <div class="wrapper">
+		<div class="content">
+	    	<div class="container-entity">
+				<span>
+					<h2 th:text="'Registi disponibili per il film ' + ${movie.title}">Registi diponibili per il Film</h2>	
+						<ul>
+							<li th:each="artist : ${artists}">
+								<span  class="entity">
+									<img th:src="@{/image/artist/{id}(id=${artist.id})}"  width="10%" />
+									<h2><a th:href="@{'/admin' +'/' + 'setDirectorToMovie' + '/' + ${artist.id} + '/' + ${movie.id}}"
+									th:text="${artist.name} + ' '+ ${artist.surname}"></a></h2>
+								</span>	
+							</li>	
+						</ul>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="/source/source.html::footer"></footer>
+</body>
+
+</html>

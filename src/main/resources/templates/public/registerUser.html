@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Registrazione utente</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+
+<body>
+	<header th:replace="/source/source.html::intestazione"></header>
+	
+<div class="wrapper" style="background-image: url('https://source.unsplash.com/random/1920x1000/?Netflix');">
+    <div class="content form_centrato">
+      <form class="form-Login form-container text-center" enctype="multipart/form-data" th:action="@{/signup}" method="POST" style="margin-top:10.5%; width: 50%; height:70%; border:black">
+		  <br>
+		 <h5> Perfavore registrati qui </h5>
+			<p th:if="${signupError}" class="error"> L'username inserito già esiste! </p> <!-- implementare il controllo lato server -->
+			
+	        <div class="form-group">
+				<label for="username">Username</label>
+				<span><input required name="username" type="text" class="form-control" placeholder="Inserisci l'username" th:field="${credentials.username}"></span>
+				<td th:if="${#fields.hasErrors('credentials.username')}"
+                th:errors="${credentials.username}" th:style="'color:red'"></td>		
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="password">Password</label>
+				<span><input required name="password" type="password" class="form-control" placeholder="Inserisci la password" th:field="${credentials.password}"></span>
+				<td th:if="${#fields.hasErrors('credentials.password')}"
+                th:errors="${credentials.password}" th:style="'color:red'">
+                </td>
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="name">Nome</label> 
+				<span><input required name="name" type="text" class="form-control" placeholder="Inserisci il tuo nome"  th:field="${user.name}"></span>
+				<td th:if="${#fields.hasErrors('user.name')}"
+                th:errors="${user.name}" th:style="'color:red'"></td>
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="Cognome">Cognome</label> 
+				<span><input required name="surname" type="text" class="form-control" placeholder="Inserisci il tuo cognome" th:field="${user.surname}"></span>
+				<td th:if="${#fields.hasErrors('user.surname')}"
+                th:errors="${user.surname}" th:style="'color:red'"></td>
+			</div>
+			
+			<span>
+				<div class="form-group">
+					<label for="dateOfBirth">Data di nascita</label> 
+					<span><input required name="dateOfBirth" type="date" class="form-control" th:field="${user.dateOfBirth}"></span>
+					<td th:if="${#fields.hasErrors('user.dateOfBirth')}"
+	                th:errors="${user.dateOfBirth}" th:style="'color:red'"></td>
+				</div>
+				
+				<div class="form-group">
+	         		<div><button type="submit" class="login-submit btn btn-primary">Invio</button></div>
+	           </div>
+           </span>
+      </form>
+    </div>
+ </div>
+  
+ <footer th:replace="/source/source.html::footer"></footer>
+</body>
+
+</html>

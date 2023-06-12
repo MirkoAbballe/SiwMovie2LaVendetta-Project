@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Gestione degli Artisti</title>
+    <link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+    <link rel="stylesheet" href="/css/stile.css" />
+
+    <link rel="stylesheet" 
+        th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+        crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <header th:replace="/source/source.html::intestazione"></header>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+
+    <div class="wrapper">
+		<div class="content">
+	    	<div class="container-entity">
+				<div th:if="${actorsmovie.isEmpty()}">Non ci sono attori per questo film</div>
+				<ul class="actorsmovie">
+					<h4 th:text="'Attori del film ' + ${movie.title}"></h4>
+					Attori che si possono rimuovere:
+					<li th:each="actor : ${actorsmovie}">
+						<span  class="entity">
+							<img th:src="@{/image/artist/{id}(id=${actor.id})}"  width="10%" />
+							<H2><a th:text="${actor.name}+' '+${actor.surname}"></a></H2>
+							<a th:href="@{'/admin/removeActorFromMovie/'+ ${actor.id}+'/'+${movie.id}}">Cancella</a>
+						</span>
+					</li>
+				</ul>
+				
+				
+				<ul>
+					<span>
+						Attori che si possono aggiungere:
+						<li th:each="actor : ${artists}">
+							<span  class="entity">
+								<img th:src="@{/image/artist/{id}(id=${actor.id})}"  width="10%" />	
+								<h2><a th:text="${actor.name}+' '+${actor.surname}"></a></h2>
+								<a th:href="@{'/admin/addActorToMovie/'+ ${actor.id}+'/'+${movie.id}}">Aggiungi</a>
+							</span>
+						</li>
+						<div>
+							<a th:href="@{'/admin/formUpdateMovie/'+ ${movie.id}}"><button type="button">Fine</button></a>
+						</div>
+					</span>
+				</ul>
+			 </div>
+		</div>
+	</div>
+	
+    <footer th:replace="/source/source.html::footer"></footer>
+
+</body>
+
+</html>

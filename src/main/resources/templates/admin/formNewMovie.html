@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Registrazione film</title>
+	  	<link rel="shortcut icon" href="/images/stella.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+	
+	<body>
+		<header th:replace="/source/source.html::intestazione"></header>
+	
+		<div class="wrapper" style="background-image: url('/images/cinemaAdmin.jpg'); overflow-y:auto;">
+			<div class="content form_centrato">
+      				<form class="form-Login form-container text-center" th:action="@{/admin/movies}" enctype="multipart/form-data" method="POST" th:object="${movie}" style="margin-top:40%; width:45%; height:50%; border:black">
+							<h5>Registrazione Film</h5>
+							
+							<div th:if="${#fields.hasGlobalErrors()}">
+								<errors>
+        							<p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+								</errors>
+							</div>
+						
+							<div class="form-group">
+								<label for="title">Titolo:</label> 
+								<span><input required type="text" class="form-control" th:field="${movie.title}" id="title"/></span>
+								<errors>
+									<span style="color:red;" th:if="${#fields.hasErrors('title')}" th:errors="${movie.title}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "name". -->
+								</errors>
+				    		</div>
+							<BR>
+							<div class="form-group">
+								<label for="year">Anno:</label> 
+								<span>
+									<input required type="text" class="form-control" th:field="${movie.year}" id="year"/>
+								</span>
+								<errors>
+									<span style="color:red;" th:if="${#fields.hasErrors('year')}" th:errors="${movie.year}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "surname". -->
+								</errors>
+				  	   		</div>
+							<BR>
+							<div class="form-group">
+								<label for="plot">Trama:</label> 
+								<span>
+									<input required type="text" class="form-control" th:field="${movie.plot}" id="plot"/>
+								</span>
+								
+								<errors>
+									<span style="color:red;" th:if="${#fields.hasErrors('plot')}" th:errors="${movie.plot}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "surname". -->
+								</errors>
+							</div>
+							<BR>
+		
+							<div class="form-group">	
+								<label for="genre">Seleziona un genere:</label>
+								<span>
+									<BR>
+  									<select id="genre" name="genre" th:field="${movie.genre}">
+					  					<option value="">/</option>
+	  				  					<option value="animazione">animazione</option>
+		    			 				<option value="avventura">avventura</option>
+		    			  				<option value="azione">azione</option>
+		    			 				<option value="biografico">biografico</option>
+		    			  				<option value="catastrofico">catastrofico</option>
+		    			  				<option value="comico">comico</option>
+		    			 				<option value="commedia">commedia</option>
+		    			  				<option value="drammatico">drammatico</option>
+			    			  			<option value="fantascienza">fantascienza</option>
+			    			  			<option value="fantasy">fantasy</option>
+			    			 			<option value="giallo">giallo</option>
+						    			<option value="guerra">guerra</option>
+						    			<option value="horror">horror</option>
+						    			<option value="musicale">musicale</option>
+						    			<option value="politco-sociale">politico-sociale</option>
+						    			<option value="sportivo">sportivo</option>
+						    			<option value="storico">storico</option>
+						    			<option value="western">western</option>
+  						 	  		</select>
+  						 	  	</span>	
+  						  	  <errors>
+								<span style="color:red;" th:if="${#fields.hasErrors('genre')}" th:errors="${movie.genre}"></span> <!-- riga che ritorna uno specifico errore che si verifica dal binding sul campo "genre". -->
+							  </errors>
+						  </div>
+						  <BR>
+							  
+						 <div class="form-group">
+  			 				<label for="wonOscar">Ha vinto il premio Oscar?</label>
+  		  	 				<input type="checkbox" id="wonOscar" class="form-control" name="wonOscar" th:field="${movie.wonOscar}" value="true"/>
+						</div>
+				
+				
+						<div class="form-group">
+  			  				<label for="image">Locandina</label>
+  		  	    			<input required type="file" id="image" name="image" class="form-control" th:field="${movie.image}"/>
+						</div>
+	    		
+	    		
+						<div class="form-group">
+							<button type="submit" class="login-submit btn btn-primary">Invio</button>
+						</div>
+				</div>
+			</form>
+   	 	</div>
+  	</div>
+  
+  <footer th:replace="/source/source.html::footer"></footer>
+</body>
+
+</html>
