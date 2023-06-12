@@ -1,0 +1,166 @@
+Abballe Mirko [566829]									------ CASI D'USO [ADMIN] ------
+
+CASO D'USO 1: Inserimento FIlm
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Inserimento Film" il sistema restituisce un Form dove l'admin può inserire i dettagli del Film
+5)Compilato il form e premuto il tasto "Invio", il sistema restituisce una pagina di ricapitolazione con i dettagli del film appena inserito.
+
+CASO D'USO 2: Inserimento Artisti
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Inserimento Artisti" il sistema restituisce un Form dove l'admin può inserire i dettagli dell'Artista
+5)Compilato il form e premuto il tasto "Invio", il sistema restituisce una pagina di ricapitolazione con i dettagli dell'artista appena inserito.
+
+CASO D'USO 3: Gestione Film (Modifica campi Film / attori, regista)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Film" il sistema restituisce una lista di film presenti sul database
+5)Viene data la possibilità di modificare i dettagli dei film presenti sul database
+6)Il sistema restituisce una pagina di ricapitolazione del film con la possibilità di modificare il regista ed i vari attori presenti nel film. Inoltre è disposto un Form dove è possibile modificare i campi del film. Premuto "Invio" sul form verranno modificati i dati di quel relativo film sul database
+
+CASO D'USO 4: Gestione Film (Cancellazione Film)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Film" il sistema restituisce una lista di film presenti sul database
+5)Viene data la possibilità di eliminare, attraverso il click sull'apposito cestino, il film in questione dal database
+6)Il sistema restituisce la lista dei film presenti all'interno del database evidenziando la cancellazione del film in questione
+
+CASO D'USO 5: Gestione Artisti (Modifica campi Artisti)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Artisti" il sistema restituisce una lista di artisti presenti sul database
+5)Viene data la possibilità di modificare i dettagli degli artisti presenti sul database
+6)Il sistema restituisce una pagina di ricapitolazione dell'artista con la possibilità di modificare i dettagli dell'artista attraverso un Form. Premuto "Invio" sul form verranno modificati i dati di quel relativo artista sul database
+
+CASO D'USO 6: Gestione Artisti (Cancellazione artista)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Artisti" il sistema restituisce una lista di artisti presenti sul database
+5)Viene data la possibilità di eliminare, attraverso il click sull'apposito cestino, l'artista in questione dal database
+6)Il sistema restituisce la lista degli artisti presenti all'interno del database evidenziando la cancellazione dell'artista in questione
+
+CASO D'USO 7: Gestione Recensioni (Visualizzazione)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Recensioni" il sistema restituisce una lista di recensioni presenti sul database
+5)Viene data la possibilità di visualizzare i dettagli delle recensioni presenti sul database
+6)Il sistema restituisce una pagina di ricapitolazione con le varie recensioni inserite dagli utenti autenticati attraverso username e password, mostrando "Titolo della recensione, valutazione, titolo del film recensito, testo della recensione, username dell'utente ed infine data ed ora di inserimento della recensione
+
+CASO D'USO 8: Gestione Recensioni (Cancellazione recensione)
+1)L'admin accede con le proprie credenziali (username e password) attraverso il form di Login
+2)Il sistema restituisce la pagina Index Admin
+3)L'admin può scegliere tra le diverse opzioni (Inserimento FIlm, Inserimento Artisti, Gestione Film, Gestione Artisti e Gestione Recensioni)
+4)Cliccando sulla sezione "Gestione Recensioni" il sistema restituisce una lista di recensioni presenti sul database
+5)Viene data la possibilità di visualizzare i dettagli delle recensioni presenti sul database
+6)Viene data la possibilità di eliminare, attraverso il click sull'apposito cestino, la recensione in questione dal database
+7)Il sistema restituisce la lista delle recensioni presenti all'interno del database evidenziando la cancellazione della recensione in questione
+
+
+									------ CASI D'USO [UTENTE AUTENTICATO] ------
+
+CASO D'USO 1: Consultazione lista Film
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Lista film" il sistema restituisce la lista dei film consultabili presenti all'interno del database
+3)Cliccando su un singolo film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori, eventuali recensioni e se l'utente in questione non ha espresso una recensione su tale film il sistema mostra a schermo la possibilità di inserirne una nuova
+4)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+5)Cliccando sul singolo attore il sistema restituisce i dettagli del singolo attore
+
+CASO D'USO 2: Inserimento di una recensione
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Lista film" il sistema restituisce la lista dei film consultabili presenti all'interno del database
+3)Cliccando su un singolo film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori, eventuali recensioni e se l'utente in questione non ha espresso una recensione su tale film il sistema mostra a schermo la possibilità di inserirne una nuova"
+4)Cliccando su "Inserisci una nuova recensione" il sistema restituisce una pagina contenente un modulo caratterizzato da "Titolo della recensione, testo della recensione e valutazione della recensione (espressa in un valore da 1 a 5)"
+5)Cliccando su "Invio" il sistema restituisce la pagina contenente i dettagli del film aggiornando la valutazione a schermo. Il sistema effettua una media delle valutazioni considerando la recensione appena inserita e quelle già inserite dagli altri utenti
+
+CASO D'USO 3: Ricerca Film
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Ricerca film" il sistema restituisce un modulo dove l'utente può ricercare i film secondo diversi parametri (Anno e Genere)
+3)Premendo "Invio" il sistema restituisce la lista di film che rispettano le condizioni impostate sul modulo
+4)Cliccando su un singolo film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori, eventuali recensioni e se l'utente in questione non ha espresso una recensione su tale film il sistema mostra a schermo la possibilità di inserirne una nuova"
+5)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+6)Cliccando sull'attore il sistema restituisce i dettagli del singolo attore
+
+CASO D'USO 4: Consultazione lista Artisti
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Lista artisti" il sistema restituisce la lista degli artisti consultabili presenti all'interno del database
+3)Cliccando su un singolo artista il sistema restituisce i dettagli del singolo artista, mostrando "Nome e Cognome, Nazionalità, Data di nascita, Lista dei film in cui ha partecipato come Regista e la lista dei film in cui ha partecipato come Attore)
+4)Cliccando sul film presente nella lista dei film in cui ha partecipato come Regista, il sistema restituisce i dettagli del singolo film
+5)Cliccando sul film presente nella lista dei film in cui l'artista ha partecipato come Attore, il sistema restituisce i dettagli del singolo film
+
+CASO D'USO 5: Ricerca Artisti
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Ricerca artisti" il sistema restituisce un modulo dove l'utente può ricercare l'artista secondo il parametro "Nome"
+3)Premendo "Invio" il sistema restituisce la lista degli artisti che rispettano la condizione impostata sul modulo
+4)Cliccando su un singolo artista il sistema restituisce i dettagli del singolo artista mostrando "Nome e Cognome, Nazionalità, Data di nascita, Lista dei film in cui ha partecipato come Regista e la lista dei film in cui ha partecipato come Attore)
+5)Cliccando sul film presente nella lista dei film in cui ha partecipato come Regista, il sistema restituisce i dettagli del singolo film
+6)Cliccando sul film presente nella lista dei film in cui l'artista ha partecipato come Attore, il sistema restituisce i dettagli del singolo film
+
+CASO D'USO 6: Visualizzazione classifica
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Scorrendo nella pagina index il sistema restituisce la classifica dei primi 3 film con la migliore valutazione presenti nel database
+3)Cliccando su uno dei 3 film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori, eventuali recensioni e se l'utente in questione non ha espresso una recensione su tale film il sistema mostra a schermo la possibilità di inserirne una nuova"
+4)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+5)Cliccando sul singolo attore il sistema restituisce i dettagli del singolo attore
+
+CASO D'USO 7: Consultazione recensioni utente
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Le mie recensioni" il sistema restituisce una lista di recensioni inserite dagli utenti
+3)La lista è interamente dedicata alla visualizzazione delle recensioni e comprende "Titolo della recensione, titolo del film recensito , valutazione da 1 a 5 e nome dell'utente"
+
+
+								------ CASI D'USO [UTENTE NON AUTENTICATO] ------
+
+CASO D'USO 1: Consultazione lista Film
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Lista film" il sistema restituisce la lista dei film consultabili presenti all'interno del database
+3)Cliccando su un singolo film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori ed eventuali recensioni
+4)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+5)Cliccando sul singolo attore il sistema restituisce i dettagli del singolo attore
+
+CASO D'USO 2: Ricerca Film
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Ricerca film" il sistema restituisce un modulo dove l'utente può ricercare il film secondo diversi parametri (Anno e Genere)
+3)Premendo "Invio" il sistema restituisce la lista di film che rispettano le condizioni impostate sul modulo
+4)Cliccando su un singolo film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori ed eventuali recensioni
+5)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+6)Cliccando sul singolo attore il sistema restituisce i dettagli del singolo attore
+
+CASO D'USO 3: Consultazione Lista Artisti
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Lista artisti" il sistema restituisce la lista degli artisti consultabili presenti all'interno del database
+3)Cliccando su un singolo artista il sistema restituisce i dettagli del singolo artista, mostrando "Nome e Cognome, Nazionalità, Data di nascita, Lista dei film in cui ha partecipato come Regista e la lista dei film in cui ha partecipato come Attore)
+4)Cliccando sul film presente nella lista dei film in cui ha partecipato come Regista, il sistema restituisce i dettagli del singolo film
+5)Cliccando sul film presente nella lista dei film in cui l'artista ha partecipato come Attore, il sistema restituisce i dettagli del singolo film
+
+CASO D'USO 4: Ricerca Artisti
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Cliccando sulla sezione "Ricerca artisti" il sistema restituisce un modulo dove l'utente può ricercare l'artista secondo il parametro "Nome"
+3)Premendo "Invio" il sistema restituisce la lista degli artisti che rispettano la condizione impostata sul modulo
+4)Cliccando su un singolo artista il sistema restituisce i dettagli del singolo artista mostrando "Nome e Cognome, Nazionalità, Data di nascita, Lista dei film in cui ha partecipato come Regista e la lista dei film in cui ha partecipato come Attore)
+5)Cliccando sul film presente nella lista dei "film in cui l'artista ha partecipato come Regista", il sistema restituisce i dettagli del singolo film
+6)Cliccando sul film presente nella lista dei "film in cui l'artista ha partecipato come Attore", il sistema restituisce i dettagli del singolo film
+
+CASO D'USO 5: Visualizzazione classifica
+1)Il sistema restituisce la pagina Index dedicata agli utenti autenticati e non, con una headbar che presenta diverse funzionalità di navigazione "Lista Film, Ricerca Film, Lista Artisti, Ricerca Artisti".
+2)Scorrendo nella pagina index il sistema restituisce la classifica dei primi 3 film con la migliore valutazione presenti nel database
+3)Cliccando su uno dei 3 film il sistema restituisce i dettagli del singolo film mostrando "Valutazione, Titolo, Anno di uscita, Genere, Trama, (eventuale vincita del premio Oscar), Regista, lista degli attori, eventuali recensioni e se l'utente in questione non ha espresso una recensione su tale film il sistema mostra a schermo la possibilità di inserirne una nuova"
+4)Cliccando sul regista il sistema restituisce i dettagli del singolo regista
+5)Cliccando sul singolo attore il sistema restituisce i dettagli del singolo attore
+
+							
+
+
+
+
+
+
+
+
